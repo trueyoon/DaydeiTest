@@ -23,7 +23,7 @@ notifications:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r daydei-test.zip
+  - zip -r daydei-test
   - mkdir -p deploy
   - mv daydei-test.zip deploy/daydei-test.zip
 
