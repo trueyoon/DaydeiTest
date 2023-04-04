@@ -25,7 +25,7 @@ script: "./gradlew clean build"
 before_deploy:
   - zip -r springboot-webservice *
   - mkdir -p deploy
-  - mv daydei-test.zip deploy/daydei-test.zip
+  - sudo mv daydei-test.zip deploy/daydei-test.zip
 
 deploy:
   - provider: s3
