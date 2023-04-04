@@ -14,12 +14,6 @@ cache:
     - '$HOME/.gradle'
 
 
-# CI 실행 완료시 메일로 알람
-notifications:
-  email:
-    recipients:
-      - jiyoon778@gmail.com
-
 script: "./gradlew clean build"
 
 before_deploy:
@@ -40,3 +34,24 @@ deploy:
     on:
       repo: trueyoon/DAYdeiBackRepo #Github 주소
       branch: develop
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: jaewonstudy-webservice-deploy # S3 버킷
+    key: jaewon-study.zip # S3 버킷에 저장된 jaewon-study.zip 파일을 EC2로 배포
+    bundle_type: zip
+    application: jaewon-study-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: jaewon-study-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      repo: jaewon0913/jaewon-study
+      branch: main
+
+
+
+# CI 실행 완료시 메일로 알람
+notifications:
+  email:
+    recipients:
+      - jiyoon778@gmail.com
