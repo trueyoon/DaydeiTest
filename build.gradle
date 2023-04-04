@@ -84,10 +84,10 @@ dependencies {
 	implementation 'io.sentry:sentry-spring-boot-starter:6.16.0'
 
 }
-
-tasks.named('test') {
-	useJUnitPlatform()
-}
+//
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
 
 def querydslDir = "$buildDir/generated/querydsl"
 
