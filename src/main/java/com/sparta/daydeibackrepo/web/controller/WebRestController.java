@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 
-import static com.sparta.daydeibackrepo.DaydeiBackRepoApplication.APPLICATION_LOCATIONS;
-
 @RestController
 @AllArgsConstructor
 public class WebRestController {
