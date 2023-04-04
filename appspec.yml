@@ -2,8 +2,8 @@ version: 0.0
 os: linux
 
 files:
-  - source:  /
-    destination: /home/ubuntu/app/step3/zip/
+  - source: /
+    destination: /home/ubuntu/app
     overwrite: yes
 
 permissions:
@@ -13,15 +13,25 @@ permissions:
     group: ubuntu
 
 hooks:
+  #  AfterInstall:
+  #    - location: scripts/stop.sh
+  #      timeout: 60
+  #      runas: ubuntu
+  #  ApplicationStart:
+  #    - location: scripts/start.sh
+  #      timeout: 60
+  #      runas: ubuntu
+  #  ValidateService:
+  #    - location: scripts/health.sh
+  #      timeout: 60
+  #      runas: ububtu
   AfterInstall:
-    - location: scripts/stop.sh
-      timeout: 60
+    - location: scripts/run_new_was.sh
+      timeout: 180
       runas: ubuntu
-  ApplicationStart:
-    - location: scripts/start.sh
-      timeout: 60
-      runas: ubuntu
-  ValidateService:
     - location: scripts/health.sh
-      timeout: 60
+      timeout: 180
       runas: ububtu
+    - location: scripts/switch.sh
+      timeout: 180
+      runas: ubuntu
