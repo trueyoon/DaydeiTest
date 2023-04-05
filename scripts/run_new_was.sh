@@ -31,8 +31,11 @@ else
   echo "> Not connected to nginx" # nginx가 실행되고 있지 않다면 에러 코드
 fi
 
+## 현재 포트의 PID를 불러온다
+#TARGET_PID=$(lsof -Fp -i TCP:${TARGET_PORT} | grep -Po 'p[0-9]+' | grep -Po '[0-9]+')
+
 # 현재 포트의 PID를 불러온다
-TARGET_PID=$(lsof -Fp -i TCP:${TARGET_PORT} | grep -Po 'p[0-9]+' | grep -Po '[0-9]+')
+TARGET_PID=$(lsof -t -i:${TARGET_PORT})
 
 # PID를 이용해 해당 포트 서버 Kill
 if [ ! -z ${TARGET_PID} ]; then
