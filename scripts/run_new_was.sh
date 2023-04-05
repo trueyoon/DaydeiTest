@@ -3,7 +3,7 @@
 
 
 PROJECT_ROOT="/home/ubuntu"
-JAR_FILE="$PROJECT_ROOT/yghh-0.0.1-SNAPSHOT.jar"
+JAR_FILE="$PROJECT_ROOT/daydeiBackRepo-0.0.1-SNAPSHOT.jar"
 
 APP_LOG="$PROJECT_ROOT/application.log"
 ERROR_LOG="$PROJECT_ROOT/error.log"
