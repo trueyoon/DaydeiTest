@@ -14,26 +14,26 @@ permissions:
     group: ubuntu
 
 hooks:
-    AfterInstall:
-      - location: scripts/stop.sh
-        timeout: 60
-        runas: ubuntu
-    ApplicationStart:
-      - location: scripts/start.sh
-        timeout: 60
-        runas: ubuntu
+#    AfterInstall:
+#      - location: scripts/stop.sh
+#        timeout: 60
+#        runas: ubuntu
+#    ApplicationStart:
+#      - location: scripts/start.sh
+#        timeout: 60
+#        runas: ubuntu
 #  #  ValidateService:
 #  #    - location: scripts/health.sh
 #  #      timeout: 60
 #  #      runas: ububtu
 #
-#  AfterInstall:
-#    - location: scripts/run_new_was.sh
-#      timeout: 180
-#      runas: ubuntu
-#    - location: scripts/health.sh
-#      timeout: 180
-#      runas: ububtu
-#    - location: scripts/switch.sh
-#      timeout: 180
-#      runas: ubuntu
+  AfterInstall:
+    - location: scripts/run_new_was.sh
+      timeout: 180
+      runas: ubuntu
+    - location: scripts/health.sh
+      timeout: 180
+      runas: ububtu
+    - location: scripts/switch.sh
+      timeout: 180
+      runas: ubuntu
