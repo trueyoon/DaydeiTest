@@ -47,6 +47,6 @@ echo "$TIME_NOW > 실행된 프로세스 아이디 $CURRENT_PID 입니다." >> $
 #
 #echo "> $JAR_NAME 를 profile=$IDLE_PROFILE 로 실행합니다."
 #nohup java -jar \
-#    -Dspring.config.location=classpath:/application.properties,classpath:/application-$IDLE_PROFILE.properties,/home/ububtu/app/application-oauth.properties,/home/ububtu/app/application-real-db.properties \
+#    -Dspring.config.location=classpath:/application.properties,classpath:/application-$IDLE_PROFILE.properties,/home/ubuntu/app/application-oauth.properties,/home/ububtu/app/application-real-db.properties \
 #    -Dspring.profiles.active=$IDLE_PROFILE \
 #    $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &

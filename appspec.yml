@@ -33,7 +33,7 @@ hooks:
       runas: ubuntu
     - location: scripts/health.sh
       timeout: 180
-      runas: ububtu
+      runas: ubuntu
     - location: scripts/switch.sh
       timeout: 180
       runas: ubuntu
