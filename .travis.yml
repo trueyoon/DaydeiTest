@@ -6,13 +6,19 @@ jdk:
 branches:
   only:
     - main
-
+ # 외쳐 갓 도경
 # Travis CI 서버의 Home
 cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
+jobs:
+  include:
+    - name: make application.properties
+      script: touch ./src/main/resources/application.properties
+    - name: deliver application.properties
+      script: echo "${APPLICATION_DEV}" > ./src/main/resources/application.properties
 
 script: "./gradlew clean build"
 
@@ -34,6 +40,7 @@ deploy:
     on:
       repo: trueyoon/DaydeiTest #Github 주소
       branch: develop
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값

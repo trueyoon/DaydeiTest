@@ -17,8 +17,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class DaydeiBackRepoApplication {
 
     public static final String APPLICATION_LOCATIONS = "spring.config.location="
-            + "classpath:application.properties,"
-            + "/app/config/springboot-webservice/real-application.properties";
+            + "classpath:application.properties";
+//            + "/app/config/springboot-webservice/real-application.properties";
 
     public static void main(String[] args) {
 //        SpringApplication.run(DaydeiBackRepoApplication.class, args);
