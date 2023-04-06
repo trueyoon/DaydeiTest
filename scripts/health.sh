@@ -26,7 +26,7 @@ echo "> Start health check of WAS at 'http://3.37.212.166:${TARGET_PORT}' ..."
 # 아래 커맨드들을 새로 열린 서버가 정상적으로 작동하는지 확인
 
 # 해당 커맨드들을 10번씩 반복
-for RETRY_COUNT in 1 2 3 4 6 7 8 9 10
+for RETRY_COUNT in 1 2 3
 do
     echo "> #${RETRY_COUNT} trying..."
     # 테스트할 API 주소를 통해 http 상태 코드 가져오기
