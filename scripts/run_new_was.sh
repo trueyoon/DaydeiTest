@@ -13,7 +13,7 @@ TIME_NOW=$(date +%c)
 
 ## build 파일 복사
 echo "$TIME_NOW > $JAR_FILE 파일 복사" >> $DEPLOY_LOG
-cp $PROJECT_ROOT/build/libs/*.jar $PROJECT_ROOT
+cp $PROJECT_ROOT/build/libs/*.jar $JAR_FILE
 
 ####################################################
 
