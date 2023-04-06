@@ -2,7 +2,7 @@
 #
 
 
-# health_check.sh
+# health.sh
 
 #!/bin/bash
 
@@ -30,8 +30,8 @@ for RETRY_COUNT in 1 2 3 4 5 6 7 8 9 10
 do
     echo "> #${RETRY_COUNT} trying..."
     # 테스트할 API 주소를 통해 http 상태 코드 가져오기
-    RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}"  http://3.36.162.228:${TARGET_PORT}/profile)
-
+    RESPONSE_CODE=$(curl -s -w "%{http_code}"  http://3.36.162.228:${TARGET_PORT}/profile)
+                          #-o /dev/null
     echo ">RESPONSE_CODE: ${RESPONSE_CODE}"
 
 	# RESPONSE_CODE의 http 상태가 200번인 경우
