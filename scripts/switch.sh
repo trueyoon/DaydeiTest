@@ -29,4 +29,6 @@ sudo service nginx reload
 
 echo "> Nginx reloaded."
 
+
 fuser -k ${CURRENT_PORT}/tcp
+echo "> finish switch port, ${CURRENT_PORT}"
